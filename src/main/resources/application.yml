@@ -5,9 +5,9 @@ server:
 
 spring:
   jpa:
-    hibernate.ddl-auto: none
+    hibernate.ddl-auto: create
     show-sql: true
-    databae: postgresql
+    database: postgresql
 
   datasource:
     driverClassName: org.postgresql.Driver
