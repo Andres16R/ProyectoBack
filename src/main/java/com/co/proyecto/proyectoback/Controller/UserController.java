@@ -12,18 +12,18 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.tags.Tags;
 
 
-@Tags({ @Tag(name = "Usuarios", description = "API para el serivicio relacionado con usuarios") })
+@Tags({ @Tag(name = "Clases", description = "API para el serivicio relacionado con las Clases") })
 @CrossOrigin
-@RestController ("v1/api/User")
+@RestController ("v1/api/hola")
 public class UserController {
 
 
-    @Operation(summary = "Mensaje", description = "Método que Muestra un mensaje de bienvenida ")
+    @Operation(summary = "Notificacion", description = "Método Que muestra la informacion Solicitada ")
     @ApiResponses(value = { @ApiResponse(responseCode = "Mensaje", description = "hola", content = {
             @Content(mediaType = "application/json") }) })
-    @GetMapping ("/hello")
-    public String hola(){
-        return ("Hola prueba");
+    @GetMapping ("/Notificacion de Prueba")
+    public String prueba(){
+        return ("Hola ester es un nuevo mensaje de prueba que estoy relizando");
     }
 
 }

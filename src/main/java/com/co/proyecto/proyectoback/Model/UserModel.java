@@ -28,13 +28,10 @@ public class UserModel {
     @Column (name = "ESTADO")
     private String estado;
 
-    @Column (name = "NOMBRES")
-    private String nombres;
+    @Column (name = "AFORO")
+    private String aforo;
 
-    @Column (name = "APELLIDOS")
-    private String apellidos;
-
-    @Column (name = "ROL")
-    private String rol;
+    @Column (name = "NOMBRESALON")
+    private String nombresalon;
 
 }
