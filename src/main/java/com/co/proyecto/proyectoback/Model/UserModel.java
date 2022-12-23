@@ -4,37 +4,102 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.UUID;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(schema = "public", name = "USUARIOS")
+@Table(schema = "public", name = "FACULTADES")
 public class UserModel {
 
+
     @Id
-    @Column (name= "ID")
-    private Integer id;
+    @GeneratedValue (generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
+    @Column (name= "ID", updatable = false, nullable = false)
+    private UUID id;
+    @Column (name = "IDENTIFICADOR")
+    private String identificador;
 
-    @Column (name = "IDENTIDICACION")
-    private String identificacion;
+    @Column (name = "NOMBRE")
+    private String nombre;
 
-    @Column (name = "ESTADO")
-    private String estado;
+    @Column (name = "CARRERA")
+    private String carrera;
 
-    @Column (name = "NOMBRES")
-    private String nombres;
+    @Column (name = "SEDE")
+    private String sede;
 
-    @Column (name = "APELLIDOS")
-    private String apellidos;
+    @Column (name = "TELEFONO")
+    private String telefono;
 
-    @Column (name = "ROL")
-    private String rol;
+    @Column (name = "ALTA_ACREDITACION")
+    private String alta_acreditacion;
+
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getIdentificador() {
+        return identificador;
+    }
+
+    public void setIdentificador(String identificador) {
+        this.identificador = identificador;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
+    }
+
+    public String getSede() {
+        return sede;
+    }
+
+    public void setSede(String sede) {
+        this.sede = sede;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getAlta_acreditacion() {
+        return alta_acreditacion;
+    }
+
+    public void setAlta_acreditacion(String alta_acreditacion) {
+        this.alta_acreditacion = alta_acreditacion;
+    }
+
 
 }
